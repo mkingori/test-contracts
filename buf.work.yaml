@@ -1,0 +1,4 @@
+version: v1
+directories:
+  # specify the location of the protos
+  - protos

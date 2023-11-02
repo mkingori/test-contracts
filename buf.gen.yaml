@@ -1,0 +1,15 @@
+version: v1
+managed:
+  enabled: true
+  go_package_prefix:
+    default: github.com/mkingori/test-contracts/golang
+plugins:
+  # Generate Go code. Generates message and enum types.
+  - plugin: buf.build/protocolbuffers/go
+    out: golang
+    opt: paths=source_relative
+  # Generate client and server stubs for connect-go into the golang directory.
+  # These are compatible with the gRPC, gRPC-Web, and Connect RPC protocols
+  - plugin: buf.build/connectrpc/go
+    out: golang
+    opt: paths=source_relative
